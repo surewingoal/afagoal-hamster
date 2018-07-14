@@ -1,8 +1,8 @@
 # AFAGOAL——SALEMAN_CLIENT 
 
 ## <a name="注册业务员"></a>注册业务员
-* URL ： https://www.hamster.afagoal.top/salemans
-* method : post
+* URL ： salemans
+* METHOD : POST
 * 参数
 
 ```
@@ -25,8 +25,8 @@
 
 ## <a name="添加客户"></a>添加客户
 
-* URL ： https://www.hamster.afagoal.top/clients
-* method ： POST
+* URL ： clients
+* METHOD ： POST
 * 参数
 ```
 {
@@ -66,3 +66,176 @@
     "data": "添加成功！"
 }
 ```
+
+## <a name="获取客户"></a>获取客户
+* URL : clients
+* METHOD : GET
+* 参数
+
+| 参数  | 参数名称  | 参数类型 | 是否必传 |  
+|:------------- |:---------------:| -------------:| ------:|
+|客户等级   |client_level  |  Byte   |   否  |  
+|客户状态  |client_state   |  byte   |  否 | 
+|客户名称   | client_name  |  String |   否 | 
+
+* 返回
+
+```
+{
+    "msg": null,
+    "rc": 0,
+    "data": {
+        "rows": [
+            {
+                "id": 5,
+                "product_name": "房地产",
+                "product_id": 1,
+                "client_name": "新疆哥",
+                "client_state": 0,
+                "client_mobile": "18267898765",
+                "client_source": 1,
+                "notice_date_str": null,
+                "client_address": "杭州",
+                "client_level": 1,
+                "client_industry": 1
+            },
+            {
+                "id": 4,
+                "product_name": "房地产",
+                "product_id": 1,
+                "client_name": "新疆哥",
+                "client_state": 0,
+                "client_mobile": "18267898765",
+                "client_source": 1,
+                "notice_date_str": null,
+                "client_address": "杭州",
+                "client_level": 1,
+                "client_industry": 1
+            }
+        ],
+        "total": 2
+    }
+}
+```
+
+## <a name="修改客户"></a>修改客户
+
+* URL ： clients 
+* METHOD : PUT
+* 参数 
+
+| 参数  | 参数名称  | 参数类型 | 是否必传 |  
+|:------------- |:---------------:| -------------:| ------:|
+|客户ID   |id  |  long  |   是  |  
+|客户状态  |client_state   |  byte   |  否 | 
+|提醒时间   | notice_date_str  |  String |   否 | 
+|客户等级   | client_level  |  byte |   否 | 
+
+```
+{
+	"id":4,
+	"client_state":2,
+	"notice_date_str":"2018-07-19",
+	"client_level":1
+}
+```
+
+* 参数类型 : JSON
+
+* 返回
+```
+{
+    "msg": null,
+    "rc": 0,
+    "data": "操作成功！"
+}
+```
+
+## <a name="删除客户"></a>删除客户
+
+* URL : clients
+* METHOD : DELETE 
+* 参数 : ids    例如 ids=1,2,3,4
+* 参数类型 : URL 
+* 返回
+
+```
+{
+    "msg": null,
+    "rc": 0,
+    "data": "操作成功！"
+}
+```
+
+## <a name="添加用户管理日志"></a>添加用户管理日志
+
+* URL ： clients/log 
+* METHOD : POST
+* 参数 
+
+| 参数  | 参数名称  | 参数类型 | 是否必传 |  
+|:------------- |:---------------:| -------------:| ------:|
+|客户ID   |client_id  |  long  |   是  |  
+|'评价：0-非常满意，1-满意 2-一般 3-不满意' | evaluate  |  byte |  是  | 
+|备注   | remark  |  String |   否 | 
+
+```
+{
+	"client_id":3,
+	"evaluate":1,
+	"remark":"很好啊"
+}
+```
+
+* 参数类型 : JSON
+
+* 返回
+```
+{
+    "msg": null,
+    "rc": 0,
+    "data": "操作成功！"
+}
+```
+
+## <a name="客户管理日志记录"></a>客户管理日志记录
+
+* URL : /clients/{client_id}/log
+* METHOD : DELETE 
+* 参数 : client_id:客户ID
+* 参数类型 : URL_PATH
+* 返回
+
+```
+{
+    "msg": null,
+    "rc": 0,
+    "data": {
+        "rows": [
+            {
+                "id": 3,
+                "client_id": 3,
+                "evaluate": 1,
+                "remark": "很好啊",
+                "created_at": "2018-07-14 04:51:24"
+            },
+            {
+                "id": 2,
+                "client_id": 3,
+                "evaluate": 1,
+                "remark": "很好啊",
+                "created_at": "2018-07-14 03:14:48"
+            },
+            {
+                "id": 1,
+                "client_id": 3,
+                "evaluate": 1,
+                "remark": "很好啊",
+                "created_at": "2018-07-14 02:57:31"
+            }
+        ],
+        "total": 3
+    }
+}
+```
+
