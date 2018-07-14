@@ -31,7 +31,6 @@ public class LoginController {
     private AuthenticationStores authenticationStores;
 
     @RequestMapping(value = "/afagoal/login", method = RequestMethod.POST)
-    @ResponseBody
     public Response tokenLogin(@RequestParam("username") String username,
             @RequestParam("password") String password) {
         if (StringUtils.isEmpty(username)) {
@@ -63,7 +62,6 @@ public class LoginController {
     }
 
     @RequestMapping("/tokens_online")
-    @ResponseBody
     public Response onlineSession() {
         return Response.ok(authenticationStores.onlineAuthentications());
     }

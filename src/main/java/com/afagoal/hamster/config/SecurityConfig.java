@@ -39,14 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/register/**").permitAll()
                 .antMatchers("/afagoal/login").permitAll()
-                .anyRequest().authenticated()
-//                .and().logout().logoutUrl("/logout")
-//                .and().formLogin()
-//                .loginProcessingUrl("/login")
-//                .failureUrl("/login?authentication_error=true")
-//                .defaultSuccessUrl("/")
-//                .loginPage("/login").permitAll()
-        ;
+                .anyRequest().authenticated();
 
         http.csrf().disable();
 

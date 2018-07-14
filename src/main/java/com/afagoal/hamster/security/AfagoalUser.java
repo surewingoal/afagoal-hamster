@@ -15,17 +15,17 @@ import org.springframework.security.core.userdetails.User;
 @Setter
 public class AfagoalUser extends User {
 
-    private Integer id;
+    private Long id;
 
     private String info;
 
     private final Map details;
 
-    public AfagoalUser(String username, String password, Collection<? extends GrantedAuthority> authorities, Integer id) {
+    public AfagoalUser(String username, String password, Collection<? extends GrantedAuthority> authorities, Long id) {
        this(username,password,authorities,id,null);
     }
 
-    public AfagoalUser(String username, String password, Collection<? extends GrantedAuthority> authorities, Integer id,Map details) {
+    public AfagoalUser(String username, String password, Collection<? extends GrantedAuthority> authorities, Long id,Map details) {
         super(username, password, authorities);
         this.id = id;
         this.details = details;
