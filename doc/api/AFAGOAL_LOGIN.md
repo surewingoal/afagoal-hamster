@@ -1,5 +1,5 @@
 
-# AFAGOAL接口文档
+# AFAGOAL登陆-注册
 
 * 服务器地址：***https://hamster.afagoal.top***
 

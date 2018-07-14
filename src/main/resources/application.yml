@@ -23,3 +23,6 @@ spring.datasource.afagoal:
 
 
 afagoal.session.enable: true
+
+server:
+  port: 9090
