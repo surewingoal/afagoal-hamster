@@ -15,6 +15,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
@@ -79,9 +80,8 @@ public class UserFlagService {
 
         Long[] flagIds = new Long[5];
         Set<Flag> userFlags = new HashSet();
-        Iterator<Entry<Long, Flag>> iterator = flagCache.entrySet().iterator();
         for (int i = 0; i < 5; i++) {
-            Flag flag = iterator.next().getValue();
+            Flag flag = selectFlag(userName, gender);
             flagIds[i] = flag.getId();
             userFlags.add(flag);
         }
@@ -89,7 +89,7 @@ public class UserFlagService {
         String flagStr = StringUtils.join(flagIds, ",");
         userRecord.setFlags(flagStr);
 
-        GoodSaying goodSaying = goodSayingCache.entrySet().iterator().next().getValue();
+        GoodSaying goodSaying = selectGoodSaying();
 
         userRecord.setGoodSayingId(goodSaying.getId());
         userRecord.setGoodSaying(goodSaying);
@@ -98,6 +98,21 @@ public class UserFlagService {
 
         return UserFlagsDto.instance(userRecord, userFlags);
     }
+
+    private Flag selectFlag(String userName, Byte gender) {
+        Long[] keys = flagCache.keySet().toArray(new Long[flagCache.size()]);
+        Random random = new Random();
+        Long randomKey = keys[random.nextInt(keys.length)];
+        return flagCache.get(randomKey);
+    }
+
+    private GoodSaying selectGoodSaying() {
+        Long[] keys = goodSayingCache.keySet().toArray(new Long[goodSayingCache.size()]);
+        Random random = new Random();
+        Long randomKey = keys[random.nextInt(keys.length)];
+        return goodSayingCache.get(randomKey);
+    }
+
 
     public void cacheUserFlags(UserFlagsDto userFlagsDto) {
         userRecordCache.put(userKey(userFlagsDto.getUserName(), userFlagsDto.getGender()),
