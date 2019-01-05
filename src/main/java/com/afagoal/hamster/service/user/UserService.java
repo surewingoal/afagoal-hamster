@@ -6,7 +6,7 @@ import com.afagoal.hamster.dto.register.WechatUserRegisterDto;
 import com.afagoal.hamster.entity.user.User;
 import com.afagoal.hamster.entity.user.UserExt;
 import com.afagoal.hamster.exception.UserRegisteredException;
-import com.afagoal.security.MD5Utils;
+//import com.afagoal.security.MD5Utils;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 /**
- * Created by BaoCai on 18/5/25.
- * Description:
+ * Created by BaoCai on 18/5/25. Description:
  */
 @Service
 public class UserService {
@@ -32,8 +31,8 @@ public class UserService {
     @Transactional
     public void createUser(User user) {
         Assert.notNull(user, "用户信息不可为空！");
-        String password = MD5Utils.passwordEncode(user.getPassword());
-        user.setPassword(password);
+//        String password = MD5Utils.passwordEncode(user.getPassword());
+//        user.setPassword(password);
         saveUser(user);
     }
 

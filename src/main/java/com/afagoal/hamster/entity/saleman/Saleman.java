@@ -16,24 +16,24 @@ import lombok.Setter;
 @Entity
 public class Saleman extends IdEntity {
 
-     private Long userId;
+    private Long userId;
 
-     private Long unitId;
+    private Long unitId;
 
-     private String productName;
+    private String productName;
 
-     private Long productId;
+    private Long productId;
 
-     private String salemanIntro;
+    private String salemanIntro;
 
-     private Byte auditState;
+    private Byte auditState;
 
-     private LocalDateTime auditTime;
+    private LocalDateTime auditTime;
 
-     private String auditUserName;
+    private String auditUserName;
 
-     private Long auditUserId;
+    private Long auditUserId;
 
-     private String auditRemark;
+    private String auditRemark;
 
 }

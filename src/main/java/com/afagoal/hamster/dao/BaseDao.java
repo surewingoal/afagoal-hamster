@@ -14,8 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.CollectionUtils;
 
 /**
- * Created by BaoCai on 17/10/21.
- * Description:
+ * Created by BaoCai on 17/10/21. Description:
  */
 public abstract class BaseDao<Entity, QEntity extends EntityPathBase<Entity>> {
 
@@ -79,7 +78,8 @@ public abstract class BaseDao<Entity, QEntity extends EntityPathBase<Entity>> {
         return expressions;
     }
 
-    public List<Entity> getEntities(List<BooleanExpression> expressions, List<OrderSpecifier> orders, Pageable pageable) {
+    public List<Entity> getEntities(List<BooleanExpression> expressions,
+            List<OrderSpecifier> orders, Pageable pageable) {
         expressions = this.rectifyExpressions(expressions);
 
         JPAQuery<Entity> query = new JPAQuery<>(entityManager);
@@ -95,7 +95,6 @@ public abstract class BaseDao<Entity, QEntity extends EntityPathBase<Entity>> {
         if (pageable != null) {
             query.offset(pageable.getOffset()).limit(pageable.getPageSize());
         }
-
 
         return query.fetch();
     }
@@ -125,7 +124,6 @@ public abstract class BaseDao<Entity, QEntity extends EntityPathBase<Entity>> {
 
         return query.fetchFirst();
     }
-
 
 
 }

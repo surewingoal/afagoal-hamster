@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
  * Created by BaoCai on 2018/7/14.
  */
 @Repository
-public class SalemanDao extends BaseDao<Saleman,QSaleman> {
+public class SalemanDao extends BaseDao<Saleman, QSaleman> {
 
-    public SalemanDao(){
+    public SalemanDao() {
         this.setQEntity(QSaleman.saleman);
     }
 

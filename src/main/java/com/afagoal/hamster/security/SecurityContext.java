@@ -4,8 +4,7 @@ import com.afagoal.hamster.entity.user.User;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 /**
- * Created by BaoCai on 18/2/26.
- * Description:
+ * Created by BaoCai on 18/2/26. Description:
  */
 public class SecurityContext {
 

@@ -1,6 +1,6 @@
 package com.afagoal.hamster.controller.login;
 
-import com.afagoal.auth.AuthenticationStores;
+//import com.afagoal.auth.AuthenticationStores;
 import com.afagoal.hamster.security.AfagoalUser;
 import com.afagoal.security.MD5Utils;
 import com.afagoal.utildto.Response;
@@ -27,8 +27,8 @@ public class LoginController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
-    @Autowired
-    private AuthenticationStores authenticationStores;
+//    @Autowired
+//    private AuthenticationStores authenticationStores;
 
     @RequestMapping(value = "/afagoal/login", method = RequestMethod.POST)
     public Response tokenLogin(@RequestParam("username") String username,
@@ -50,7 +50,7 @@ public class LoginController {
             }
 
             String tokenId = UUID.randomUUID().toString().replace("-", "");
-            authenticationStores.saveAuthentication(tokenId, authentication);
+//            authenticationStores.saveAuthentication(tokenId, authentication);
             AfagoalUser afagoalUser = (AfagoalUser) authentication.getPrincipal();
             Map result = new HashMap(afagoalUser.getDetails());
             result.put("afagoal_token", tokenId);
@@ -61,9 +61,9 @@ public class LoginController {
         }
     }
 
-    @RequestMapping("/tokens_online")
-    public Response onlineSession() {
-        return Response.ok(authenticationStores.onlineAuthentications());
-    }
+//    @RequestMapping("/tokens_online")
+//    public Response onlineSession() {
+//        return Response.ok(authenticationStores.onlineAuthentications());
+//    }
 
 }

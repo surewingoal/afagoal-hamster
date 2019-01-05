@@ -1,7 +1,7 @@
 package com.afagoal.hamster.config;
 
-import com.afagoal.auth.AfagoalAuthenticationStores;
-import com.afagoal.auth.AuthenticationStores;
+//import com.afagoal.auth.AfagoalAuthenticationStores;
+//import com.afagoal.auth.AuthenticationStores;
 import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,9 +12,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AuthConfig {
 
-    @Bean
-    public AuthenticationStores authenticationStores() {
-        return new AfagoalAuthenticationStores(new ConcurrentHashMap());
-    }
+//    @Bean
+//    public AuthenticationStores authenticationStores() {
+//        return new AfagoalAuthenticationStores(new ConcurrentHashMap());
+//    }
 
 }

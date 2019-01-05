@@ -32,9 +32,9 @@ public class ClientDao extends BaseDao<Client, QClient> {
 
     public void delete(Set<Long> idArray) {
 
-        String sql = "update afa_s_client set state = 99 where id in ( ?1 ) ;" ;
+        String sql = "update afa_s_client set state = 99 where id in ( ?1 ) ;";
         Query query = this.getEntityManager().createNativeQuery(sql);
-        query.setParameter(1,idArray);
+        query.setParameter(1, idArray);
 
         query.executeUpdate();
     }

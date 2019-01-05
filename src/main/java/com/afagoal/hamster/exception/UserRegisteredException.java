@@ -3,10 +3,10 @@ package com.afagoal.hamster.exception;
 import org.springframework.core.NestedRuntimeException;
 
 /**
- * Created by BaoCai on 18/6/28.
- * Description:
+ * Created by BaoCai on 18/6/28. Description:
  */
 public class UserRegisteredException extends NestedRuntimeException {
+
     public UserRegisteredException(String msg) {
         super(msg);
     }

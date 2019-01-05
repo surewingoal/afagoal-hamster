@@ -2,7 +2,7 @@ package com.afagoal.hamster.dto.client;
 
 import com.afagoal.hamster.entity.client.Client;
 import com.afagoal.hamster.entity.client.ClientLog;
-import com.afagoal.utils.json.CustomDateTimeSerialize;
+//import com.afagoal.utils.json.CustomDateTimeSerialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.LocalDateTime;
 import lombok.Getter;
@@ -24,7 +24,7 @@ public class ClientLogDto {
 
     private String remark;
 
-    @JsonSerialize(using = CustomDateTimeSerialize.class)
+    //    @JsonSerialize(using = CustomDateTimeSerialize.class)
     private LocalDateTime createdAt;
 
     public ClientLog instanceClientLog() {

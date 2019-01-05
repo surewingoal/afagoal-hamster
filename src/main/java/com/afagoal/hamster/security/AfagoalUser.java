@@ -8,8 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 /**
- * Created by BaoCai on 18/2/26.
- * Description:
+ * Created by BaoCai on 18/2/26. Description:
  */
 @Getter
 @Setter
@@ -21,11 +20,13 @@ public class AfagoalUser extends User {
 
     private final Map details;
 
-    public AfagoalUser(String username, String password, Collection<? extends GrantedAuthority> authorities, Long id) {
-       this(username,password,authorities,id,null);
+    public AfagoalUser(String username, String password,
+            Collection<? extends GrantedAuthority> authorities, Long id) {
+        this(username, password, authorities, id, null);
     }
 
-    public AfagoalUser(String username, String password, Collection<? extends GrantedAuthority> authorities, Long id,Map details) {
+    public AfagoalUser(String username, String password,
+            Collection<? extends GrantedAuthority> authorities, Long id, Map details) {
         super(username, password, authorities);
         this.id = id;
         this.details = details;

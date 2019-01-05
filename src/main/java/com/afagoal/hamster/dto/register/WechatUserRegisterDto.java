@@ -11,8 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 
 /**
- * Created by BaoCai on 18/6/28.
- * Description:
+ * Created by BaoCai on 18/6/28. Description:
  */
 @Getter
 @Setter

@@ -5,8 +5,7 @@ import org.apache.commons.codec.binary.StringUtils;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * Created by BaoCai on 18/4/13.
- * Description:
+ * Created by BaoCai on 18/4/13. Description:
  */
 public class AfagoalPasswordEncoder implements PasswordEncoder {
 
@@ -20,6 +19,6 @@ public class AfagoalPasswordEncoder implements PasswordEncoder {
 
     @Override
     public boolean matches(CharSequence rawPassword, String encodedPassword) {
-        return StringUtils.equals(encode(rawPassword),encodedPassword);
+        return StringUtils.equals(encode(rawPassword), encodedPassword);
     }
 }

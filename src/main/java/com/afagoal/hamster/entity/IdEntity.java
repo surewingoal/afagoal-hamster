@@ -14,8 +14,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by BaoCai on 18/1/27.
- * Description:
+ * Created by BaoCai on 18/1/27. Description:
  */
 @Getter
 @Setter

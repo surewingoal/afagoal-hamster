@@ -54,10 +54,10 @@ public class ClientService {
 
     @Transactional
     public void updateClient(ClientDto clientDto) {
-        
+
         Client client = clientDao.getById(clientDto.getId());
 
-        if(null == client){
+        if (null == client) {
             throw new RuntimeException("找不到客户！client_id : " + clientDto.getId());
         }
 

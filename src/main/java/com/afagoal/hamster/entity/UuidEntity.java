@@ -13,8 +13,7 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * Created by BaoCai on 17/10/25.
- * Description:
+ * Created by BaoCai on 17/10/25. Description:
  */
 @Getter
 @Setter
