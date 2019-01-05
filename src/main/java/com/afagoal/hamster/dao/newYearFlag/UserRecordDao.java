@@ -27,7 +27,7 @@ public class UserRecordDao extends BaseDao<UserRecord, QUserRecord> {
         Assert.notNull(userName, "userName can`t be null !");
 
         List<BooleanExpression> expressionList = new ArrayList();
-        expressionList.add(this.getQEntity().userName.eq(userName.trim()));
+        expressionList.add(this.getQEntity().userName.eq(userName));
         if (null != gender) {
             expressionList.add(this.getQEntity().gender.eq(gender));
         }

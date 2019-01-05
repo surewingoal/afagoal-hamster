@@ -26,8 +26,7 @@ public class UserFlagController {
     public Response<UserFlagsDto> userFlags(
             @ApiParam(value = "user_name", required = true) @RequestParam(value = "user_name") String userName,
             @ApiParam(value = "gender") @RequestParam(value = "gender", defaultValue = "0") Byte gender) {
-
-        UserFlagsDto userFlagsDto = userFlagService.findUserFlags(userName, gender);
+        UserFlagsDto userFlagsDto = userFlagService.findUserFlags(userName.trim(), gender);
 
         if (null == userFlagsDto) {
             userFlagsDto = userFlagService.createUserFlags(userName, gender);
